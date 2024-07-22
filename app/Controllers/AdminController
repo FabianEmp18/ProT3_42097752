@@ -1,0 +1,46 @@
+<?php
+
+namespace App\Controllers;
+
+use App\Models\UsuarioModels;
+
+class AdminController extends BaseController
+{
+    protected $usuarioModel;
+
+    public function __construct()
+    {
+        $this->usuarioModel = new UsuarioModels();
+    }
+
+    public function index()
+    {
+        $data['usuarios'] = $this->usuarioModel->findAll();
+        return view('Backend/usuario/usuarios', $data);
+    }
+
+    public function edit($id = null)
+    {
+        $data['usuario'] = $this->usuarioModel->find($id);
+
+        if ($this->request->getMethod() === 'post') {
+            $this->usuarioModel->update($id, [
+                'nombre' => $this->request->getPost('nombre'),
+                'apellido' => $this->request->getPost('apellido'),
+                'usuario' => $this->request->getPost('usuario'),
+                'email' => $this->request->getPost('email'),
+                'pass' => $this->request->getPost('pass'),
+                'perfil_id' => $this->request->getPost('perfil_id')
+            ]);
+            return redirect()->to('/admin');
+        }
+
+        return view('Backend/usuario/edit', $data);
+    }
+
+    public function delete($id = null)
+    {
+        $this->usuarioModel->delete($id);
+        return redirect()->to('/admin');
+    }
+}

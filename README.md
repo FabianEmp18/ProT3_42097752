@@ -1,60 +1,39 @@
-# CodeIgniter 4 Framework
+Sistema de Venta de Insumos Informáticos
+Este proyecto es una página web para la venta de insumos informáticos. Actualmente, está en desarrollo y ofrece funcionalidades básicas para usuarios y administradores.
 
-## What is CodeIgniter?
+Funcionalidades Actuales
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+Usuario Regular
+Página Principal: Los usuarios pueden ver la página principal, productos, y la sección "Acerca de".
+Registro: Los usuarios pueden registrarse proporcionando nombre, apellido, nombre de usuario, correo electrónico y contraseña.
+Inicio de Sesión: Los usuarios pueden iniciar sesión con su correo electrónico y contraseña.
+Cerrar Sesión: Los usuarios pueden cerrar sesión.
 
-This repository holds the distributable version of the framework.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+Administrador
+Página Principal: Acceso a la página principal, productos, "Nosotros", "Acerca de", y "Usuarios".
+Bienvenida: Mensaje especial de bienvenida que indica que el usuario es un administrador.
+Usuarios: Los administradores pueden ver la lista de usuarios, pero esta sección está en desarrollo. Por el momento, la lista de usuarios muestra información de prueba como "En desarrollo" y "En mantenimiento".
+Cerrar Sesión: Los administradores pueden cerrar sesión.
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+Datos de Ejemplo de prueba para Admin y Clientes/Usuarios:
 
-## Important Change with index.php
+ADMIN:
+mail: admin@admin.com - password: admin
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+CLIENTE/usuario regular:
+mail: prueba1@gmail.com - password: 1234
+mail: prueba2@gmail.com - password: 12345
+mail: prueba3@gmail.com - password: 123456
+mail: td@gmail.com - password: 123456t
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
 
-**Please** read the user guide for a better explanation of how CI4 works!
 
-## Repository Management
+Base de Datos
+La base de datos se llama hector_fabian_rodriguez. Se encuentra en la carpeta del proyecto y debe ser creada con el cotejamiento utf8mb4_general_ci para poder importarla.
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+Para clonarlo: git clone https://github.com/FabianEmp18/ProT3_42097752.git 
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+Una vez clonado o descargado la carpeta ProT3_42097752 debe ser llevada a la carpeta htdocs de xampp. (Se debe tener el cuenta el nombre de la carpeta para que funcione correctamente)
 
-## Contributing
-
-We welcome contributions from the community.
-
-Please read the [*Contributing to CodeIgniter*](https://github.com/codeigniter4/CodeIgniter4/blob/develop/CONTRIBUTING.md) section in the development repository.
-
-## Server Requirements
-
-PHP version 8.1 or higher is required, with the following extensions installed:
-
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
-
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> - The end of life date for PHP 8.1 will be December 31, 2025.
-
-Additionally, make sure that the following extensions are enabled in your PHP:
-
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+Se requiere PHP 8.1 o superior.
